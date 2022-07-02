@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- basic scripts -->
+
+    <!--[if !IE]> -->
+    <script src="__STATIC__/components/jquery/dist/jquery.js"></script>
+
+    <!-- <![endif]-->
+
+    <!--[if IE]>
+    <script src="__STATIC__/components/jquery.1x/dist/jquery.js"></script>
+    <![endif]-->
+    <script src="__STATIC__/js/ajax.js">
+    </script>
+    <script type="text/javascript">
+        function changename(s) {
+            /* 获得表格数据 */
+            var name = $(s).html();
+            var id = $(s).attr('id');
+            /* 清空数据 */
+            $(s).html("");
+            /* 在td里面加一个表单 ,,并且添加失焦时间*/
+            $(s).parent().append("<input id='" + id + "' value='" + name + "' />");
+            /* 通过父标签的子标签得到input表单 */
+            $(s).parent().children("input").attr("onblur", "nameblur(this,'" + name + "', '" + id + "')");
+            /* 通过focus主动触发，获得焦点 */
+            $(s).parent().children("input").focus();
+            /* 删掉原有的标签 */
+            $(s).remove();
+
+        }
+        /* 表单失焦事件 */
+        function nameblur(inp, name, id) {
+            /* 判断表单内的值是否改变 */
+            var val = $(inp).val();
+            if (val != name) {
+                //   <a href="DeleteServlet?fid=${f.id }" onclick="if(confirm('确认删除吗？')==false)return false;">删除</a>
+                // alert("这里是发送异步请求，修改数据库操作");
+            }
+            /* 在td里面加回来span,值就是val*/
+            $(inp).parent().append("<span id='" + id + "' onclick='changename(this)'>" + val + "</span>");
+            /* 删除input标签 */
+            $(inp).remove();
+            document.getElementById('new' + id).setAttribute('value', val);
+        }
+    </script>
+</head>
+
+<body>
+    <div class="page-header">
+        <h1>
+            <b>教师信息</b>
+            <div class="col-sm-6 pull-right">
+                <span class="btn btn-sm btn-primary pull-right"
+                    onclick="javascript:window.location.href = '../manage.systemuser/index'">
+                    返回用户信息页面
+                    <i class="icon-reply icon-only"></i>
+                </span>
+            </div>
+
+        </h1>
+    </div>
+
+
+    <form action="updateinfo" method="post" class="form-horizontal" role="form">
+        <div class="profile-user-info profile-user-info-striped">
+
+
+            <div class="profile-info-row">
+                <div class="profile-info-name">工号</div>
+                <div class="profile-info-value">
+                    <span class="editable editable-click" id="no" onclick="changename(this)">{$no}</span>
+                </div>
+            </div>
+
+            <div class="profile-info-row">
+                <div class="profile-info-name">姓名</div>
+                <div class="profile-info-value">
+                    <span class="editable editable-click" id="name" onclick="changename(this)">{$name}</span>
+                </div>
+            </div>
+
+            <div class="profile-info-row">
+                <div class="profile-info-name">性别</div>
+                <div class="profile-info-value">
+                    <span class="editable editable-click" id="sex" onclick="changename(this)">{$sex}</span>
+                </div>
+            </div>
+
+            <div class="profile-info-row">
+                <div class="profile-info-name">院系</div>
+                <div class="profile-info-value">
+                    <span class="editable editable-click" id="major" onclick="changename(this)">{$major}</span>
+                </div>
+            </div>
+
+            <div class="profile-info-row">
+                <div class="profile-info-name">出生日期</div>
+                <div class="profile-info-value">
+                    <span class="editable editable-click" id="birth" onclick="changename(this)">{$birth}</span>
+                </div>
+            </div>
+
+            <div class="profile-info-row">
+                <div class="profile-info-name">联系电话</div>
+                <div class="profile-info-value">
+                    <span class="editable editable-click" id="phone" onclick="changename(this)">{$phone}</span>
+                </div>
+            </div>
+
+            <div class="profile-info-row">
+                <div class="profile-info-name">个人邮箱</div>
+                <div class="profile-info-value">
+                    <span class="editable editable-click" id="email" onclick="changename(this)">{$email}</span>
+                </div>
+            </div>
+
+            <input type="hidden" name="id" id="id" value={$id} readonly=“readonly”>
+
+            <input type="hidden" name="newno" id="newno" value='' style="display:none">
+
+            <input type="hidden" name="newname" id="newname" value='' style="display:none">
+
+            <input type="hidden" name="newsex" id="newsex" value='' style="display:none">
+
+            <input type="hidden" name="newmajor" id="newmajor" value='' style="display:none">
+
+            <input type="hidden" name="newbirth" id="newbirth" value='' style="display:none">
+
+            <input type="hidden" name="newphone" id="newphone" value='' style="display:none">
+
+            <input type="hidden" name="newemail" id="newemail" value='' style="display:none">
+
+        </div>
+        <div style="text-align:center;vertical-align:middle;">
+            <input type="submit" class="btn btn-sm btn-primary" value="更新提交" />
+        </div>
+    </form>
+
+</body>
+
+</html>

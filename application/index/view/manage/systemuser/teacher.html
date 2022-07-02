@@ -1,0 +1,84 @@
+    <div class="col-sm-6 pull-right">
+        <span class="btn btn-sm btn-primary pull-right" onclick="javascript:window.location.href = '../manage.systemuser/index'">
+            返回管理系统用户页面
+            <i class="icon-reply icon-only"></i>
+        </span>
+    </div>
+    {volist name="user" id="vo"}
+    <div class="profile-user-info profile-user-info-striped">
+    
+        <div class="profile-info-row">
+            <div class="profile-info-name">学号/工号</div>
+            <div class="profile-info-value">
+                <span class="editable editable-click" id="username">{$vo.num}</span>
+            </div>
+        </div>
+    
+        <div class="profile-info-row">
+            <div class="profile-info-name">姓名</div>
+            <div class="profile-info-value">
+                <span class="editable editable-click" id="country">{$vo.name}</span>
+            </div>
+        </div>
+        
+            <div class="profile-info-row">
+            <div class="profile-info-name">性别</div>
+            <div class="profile-info-value">
+                <span class="editable editable-click" id="country">{$vo.sex}</span>
+            </div>
+        </div>
+
+        <div class="profile-info-row">
+            <div class="profile-info-name">院系</div>
+            <div class="profile-info-value">
+                <span class="editable editable-click" id="age">{$vo.r_major}</span>
+            </div>
+        </div>
+    
+        <div class="profile-info-row">
+            <div class="profile-info-name">学苑</div>
+            <div class="profile-info-value">
+                <span class="editable editable-click" id="age">{$vo.r_department}</span>
+            </div>
+        </div>
+        
+        <div class="profile-info-row">
+            <div class="profile-info-name">出生日期</div>
+            <div class="profile-info-value">
+                <span class="editable editable-click" id="country">{$vo.birth}</span>
+            </div>
+        </div>
+    
+        <div class="profile-info-row">
+            <div class="profile-info-name">联系电话</div>
+            <div class="profile-info-value">
+                <span class="editable editable-click" id="age">{$vo.phone}</span>
+            </div>
+        </div>
+        
+        <div class="profile-info-row">
+            <div class="profile-info-name">个人邮箱</div>
+            <div class="profile-info-value">
+                <span class="editable editable-click" id="age">{$vo.email}</span>
+            </div>
+        </div>
+    
+        <div class="profile-info-row">
+            <div class="profile-info-name">当前状态</div>
+            <div class="profile-info-value">
+                <span class="editable editable-click" id="age">{$vo.r_status}</span>
+            </div>
+        </div>
+    </div>
+    {/volist}
+    <div class="profile-user-info profile-user-info-striped">
+    <div class="profile-info-row">
+            <div class="profile-info-name">管理的学苑</div>
+            <div class="profile-info-value">
+                {volist name="department" id="vo"}
+                <span class="editable editable-click" id="country">{$vo.department_name}</span>
+                {/volist}
+            </div>
+    </div>
+    </div>
+    

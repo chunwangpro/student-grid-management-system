@@ -1,0 +1,86 @@
+<div class="widget-box">
+    <div class="widget-box widget-color-dark" id="widget-box-7">
+        <div class="widget-header widget-header-small">
+            <h5 class="widget-title">修改学苑管理权限</h5>
+        </div>
+
+        <div class="col-sm-6 pull-right" id='test02'>
+            <span class="btn btn-sm btn-primary pull-right"
+                onclick="javascript:window.location.href = '../manage.systempermission/index'">
+                返回学苑权限管理页面
+                <i class="icon-reply icon-only"></i>
+            </span>
+        </div>
+
+        <div class="widget-body">
+            <div class="widget-main">
+                <div class="alert alert-info">
+
+                    <form action="modifyoldpermission" method="post" class="form-horizontal" role="form">
+
+
+                        <input type="hidden" name="permission_id" id="form-field-1" value={$permission_id}
+                            class="col-xs-10 col-sm-5" readonly=“readonly”>
+
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 管理员学工号：
+                            </label>
+                            <div class="col-sm-9">
+                                <input type="text" name="no" id="form-field-1" value={$no} class="col-xs-10 col-sm-5"
+                                    readonly=“readonly”>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 管理员姓名：
+                            </label>
+                            <!-- <div class="col-sm-9">
+                                <span class="col-xs-10 col-sm-5" id="name"> {$name}</span>
+                            </div> -->
+                            <div class="col-sm-9">
+                                <input type="text" name="name" id="form-field-1" value={$name}
+                                    class="col-xs-10 col-sm-5" readonly=“readonly”>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">修改管理的学苑</label>
+                            <div class="col-sm-9">
+                                <select name="department" id="form-field-100" class="col-xs-10 col-sm-5">
+                                    <option value="" style=color:gray disabled selected hidden>请选择学苑
+                                    </option>
+    
+                                </select>
+                            </div>
+                        </div>
+
+                        <div style="text-align:center;vertical-align:middle;">
+                            <input type="submit" value="提交" />
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    var select = document.getElementById("form-field-100");
+    //由于php繁琐的传值方式，数组需要将其转换为json格式，然后通过js解析json，将json格式转换为数组，才可以打印。
+
+    // 先转为JSON格式
+    var arr = '<?php echo json_encode($res) ?>';
+    // 再转回原数组
+    var nav = JSON.parse(arr);
+    //实现动态给下拉列表赋值，无论数据库如何改变，下拉列表总能显示变化后的数据，因此更新数据库后，无需手动修改前端代码。
+    for (let i = 0; i < nav.length; i++) {
+        var optionObj = document.createElement("option");
+        optionObj.innerHTML = nav[i].name;
+        optionObj.value = nav[i].id;
+        select.appendChild(optionObj);
+    }
+</script>

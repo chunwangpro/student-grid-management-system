@@ -1,0 +1,257 @@
+    <div class="col-sm-6 pull-right">
+        <span class="btn btn-sm btn-primary pull-right" onclick="javascript:window.location.href = '../manage.updatestudentinfo/index'">
+            返回学生列表
+            <i class="icon-reply icon-only"></i>
+        </span>
+    </div>
+
+    <div class="profile-user-info profile-user-info-striped">
+    
+        <div class="profile-info-row">
+            <div class="profile-info-name">学号/工号</div>
+            <div class="profile-info-value">
+                <span class="editable editable-click" id="username">{$no}</span>
+            </div>
+        </div>
+    
+        <div class="profile-info-row">
+            <div class="profile-info-name">姓名</div>
+            <div class="profile-info-value">
+                <span class="editable editable-click" id="country">{$name}</span>
+            </div>
+        </div>
+        
+            <div class="profile-info-row">
+            <div class="profile-info-name">性别</div>
+            <div class="profile-info-value">
+                <span class="editable editable-click" id="country">{$sex}</span>
+            </div>
+        </div>
+
+        <div class="profile-info-row">
+            <div class="profile-info-name">院系</div>
+            <div class="profile-info-value">
+                <span class="editable editable-click" id="age">{$major}</span>
+            </div>
+        </div>
+    
+        <div class="profile-info-row">
+            <div class="profile-info-name">导师</div>
+            <div class="profile-info-value">
+                <span class="editable editable-click" id="age">{$professor}</span>
+            </div>
+        </div>
+
+        <div class="profile-info-row">
+            <div class="profile-info-name">导师联系方式</div>
+            <div class="profile-info-value">
+                <span class="editable editable-click" id="age">{$professor_phone}</span>
+            </div>
+        </div>
+    
+        <div class="profile-info-row">
+            <div class="profile-info-name">学苑</div>
+            <div class="profile-info-value">
+                <span class="editable editable-click" id="age">{$department}</span>
+            </div>
+        </div>
+    
+        <div class="profile-info-row">
+            <div class="profile-info-name">出生日期</div>
+            <div class="profile-info-value">
+                <span class="editable editable-click" id="country">{$birth}</span>
+            </div>
+        </div>
+    
+        <div class="profile-info-row">
+            <div class="profile-info-name">联系电话</div>
+            <div class="profile-info-value">
+                <span class="editable editable-click" id="age">{$phone}</span>
+            </div>
+        </div>
+        
+        <div class="profile-info-row">
+            <div class="profile-info-name">个人邮箱</div>
+            <div class="profile-info-value">
+                <span class="editable editable-click" id="age">{$email}</span>
+            </div>
+        </div>
+    
+        <div class="profile-info-row">
+            <div class="profile-info-name">当前居住地址</div>
+            <div class="profile-info-value">
+                <span class="editable editable-click" id="age">{$address}</span>
+            </div>
+        </div>
+
+        <div class="profile-info-row">
+            <div class="profile-info-name">紧急联系人</div>
+            <div class="profile-info-value">
+                <span class="editable editable-click" id="age">{$parent}</span>
+            </div>
+        </div>
+    
+        <div class="profile-info-row">
+            <div class="profile-info-name">紧急联系人电话</div>
+            <div class="profile-info-value">
+                <span class="editable editable-click" id="age">{$parent_phone}</span>
+            </div>
+        </div>
+    
+        <div class="profile-info-row">
+            <div class="profile-info-name">当前状态</div>
+            <div class="profile-info-value">
+                <span class="editable editable-click" id="age">{$status}</span>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+<div class="widget-box">
+    <div class="widget-box widget-color-dark" id="widget-box-7">
+        <div class="widget-header widget-header-small">
+            <h5 class="widget-title">管理员修改用户信息</h5>
+        </div>
+
+        <div class="widget-body">
+            <div class="widget-main">
+                <div class="alert alert-info">
+
+                    <form action="adduser" method="post" class="form-horizontal" role="form">
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">学号/工号</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="no" id="form-field-1" placeholder="   请填写学号或工号"
+                                    class="col-xs-10 col-sm-5">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">姓名</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="name" id="form-field-1" placeholder="   请填写中文姓名"
+                                    class="col-xs-10 col-sm-5">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">性别</label>
+                            <div class="col-sm-9">
+                                <select name="sex" id="form-field-1" class="col-xs-10 col-sm-5">
+                                    <option value="" style=color:gray disabled selected hidden>请选择性别
+                                    </option>
+                                    <option value="男">男</option>
+                                    <option value="女">女</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">所属院系</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="major" id="form-field-1" placeholder="   请填写院系专业方向"
+                                    class="col-xs-10 col-sm-5">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">导师</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="professor" id="form-field-1" placeholder="   请填写导师"
+                                    class="col-xs-10 col-sm-5">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">学苑</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="department" id="form-field-1" placeholder="   请填写所属学苑"
+                                    class="col-xs-10 col-sm-5">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">用户身份</label>
+                            <div class="col-sm-9">
+                                <select name="role" id="form-field-1" class="col-xs-10 col-sm-5">
+                                    <option value="" style=color:gray disabled selected hidden>请选择用户身份
+                                    </option>
+                                    <option value="超级管理员">超级管理员</option>
+                                    <option value="教师">教师</option>
+                                    <option value="学生">学生</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">出生日期</label>
+                            <div class="col-sm-9">
+                                <input type="date" name="birth" id="form-field-1" placeholder="   请填写出生日期（yyyy-mm-dd）"
+                                    class="col-xs-10 col-sm-5">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">联系电话</label>
+                            <div class="col-sm-9">
+                                <input type="tel" name="phone" id="form-field-1" placeholder="   请填写11位手机号：18511119999"
+                                    class="col-xs-10 col-sm-5">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">个人邮箱</label>
+                            <div class="col-sm-9">
+                                <input type="tel" name="email" id="form-field-1" placeholder="   请填写常用邮箱"
+                                    class="col-xs-10 col-sm-5">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">当前居住地址</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="address" id="form-field-1" placeholder="   请填写当前居住地址"
+                                    class="col-xs-10 col-sm-5">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">当前状态</label>
+                            <div class="col-sm-9">
+                                <select name="status" id="form-field-1" class="col-xs-10 col-sm-5">
+                                    <option value="" style=color:gray disabled selected hidden>请选择当前状态
+                                    </option>
+                                    <option value="在校">在校</option>
+                                    <option value="校外实习">校外实习</option>
+                                    <option value="写论文">写论文</option>
+                                    <option value="居家">居家</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+
+                        <div style="text-align:center;vertical-align:middle;">
+                            <input type="submit" value="提交" />
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+

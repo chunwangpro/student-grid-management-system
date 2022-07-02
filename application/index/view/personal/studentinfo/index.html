@@ -1,0 +1,168 @@
+<div class="page-header">
+    <h1>
+     <b>目前状态</b>
+        <small>
+            <i class="ace-icon fa fa-angle-double-right"></i>
+            <!--overview &amp; stats-->
+            <div class="profile-info-value">
+                <span id="age">
+                    <h1><b>{$status}</b></h1>
+                </span>
+            </div>
+        </small>
+    </h1>
+</div>
+<!-- <div class="col-sm-6 pull-right">
+     <span class="btn btn-sm btn pull-right" onclick="javascript:window.location.href = ''">/public/index/main/index
+         打印个人基本信息
+         <i class="icon-reply icon-only"></i>
+     </span>
+     <span class="btn btn-sm btn-primary pull-right" onclick="javascript:window.location.href = ''">/public/index/main/index
+         向管理员申请修改
+         <i class="icon-reply icon-only"></i>
+     </span>
+ </div> -->
+
+<div class="profile-user-info profile-user-info-striped">
+
+    <div class="profile-info-row">
+        <div class="profile-info-name">学号</div>
+        <div class="profile-info-value">
+            <span class="editable" id="username">{$no}</span>
+        </div>
+    </div>
+
+    <div class="profile-info-row">
+        <div class="profile-info-name">姓名</div>
+        <div class="profile-info-value">
+            <span class="editable" id="country">{$name}</span>
+        </div>
+    </div>
+
+    <div class="profile-info-row">
+        <div class="profile-info-name">性别</div>
+        <div class="profile-info-value">
+            <span class="editable" id="country">{$sex}</span>
+        </div>
+    </div>
+
+    <div class="profile-info-row">
+        <div class="profile-info-name">出生日期</div>
+        <div class="profile-info-value">
+            <span class="editable" id="country">{$birth}</span>
+        </div>
+    </div>
+
+    <div class="profile-info-row">
+        <div class="profile-info-name">联系电话</div>
+        <div class="profile-info-value">
+            <span class="editable" id="age">{$phone}</span>
+        </div>
+    </div>
+
+    <div class="profile-info-row">
+        <div class="profile-info-name">个人邮箱</div>
+        <div class="profile-info-value">
+            <span class="editable" id="age">{$email}</span>
+        </div>
+    </div>
+
+    <div class="profile-info-row">
+        <div class="profile-info-name">疫苗接种剂次</div>
+        <div class="profile-info-value">
+            <span class="editable" id="age">{$vaccines}针</span>
+        </div>
+    </div>
+
+    <div class="profile-info-row">
+        <div class="profile-info-name">最近核酸日期</div>
+        <div class="profile-info-value">
+            <span class="editable" id="age">{$hesuan}</span>
+        </div>
+    </div>
+
+    <div class="profile-info-row">
+        <div class="profile-info-name">当前居住地址</div>
+        <div class="profile-info-value">
+            <span class="editable" id="age">{$address}</span>
+        </div>
+    </div>
+
+    <div class="profile-info-row">
+        <div class="profile-info-name">学苑</div>
+        <div class="profile-info-value">
+            <span class="editable" id="age">{$department}</span>
+        </div>
+    </div>
+
+    <div class="profile-info-row">
+        <div class="profile-info-name">学苑联络人</div>
+        <div class="profile-info-value">
+            <span class="editable" id="age"><text>{$helper}</text><text>&nbsp&nbsp&nbsp<text>{$helper_contact}</text></span>
+            
+        </div>
+    </div>
+
+    <div class="profile-info-row">
+        <div class="profile-info-name">本苑学生管理员</div>
+    
+        <div class="profile-info-value">
+            {volist name="stu_manager" id="vo"}
+            <span class="editable" id="age">{$vo.name}</span>
+            <span class="editable" id="age">{$vo.phone}</span>
+            <span class="editable" id="age">{$vo.address}</span>
+            <span class="editable" id="age">{$vo.status_name}</span>
+            <!-- <span class="editable" id="age">\n</span> -->
+            <br/>
+            {/volist}
+        </div>
+    </div>
+
+    <div class="profile-info-row">
+        <div class="profile-info-name">本苑教师管理员</div>
+    
+        <div class="profile-info-value">
+            {volist name="tea_manager" id="vo1"}
+            <span class="editable" id="age">{$vo1.name}</span>
+            <span class="editable" id="age">{$vo1.phone}</span>
+            <br/>
+            {/volist}
+        </div>
+    </div>
+
+    <div class="profile-info-row">
+        <div class="profile-info-name">院系</div>
+        <div class="profile-info-value">
+            <span class="editable" id="age">{$major}</span>
+        </div>
+    </div>
+
+    <div class="profile-info-row">
+        <div class="profile-info-name">导师</div>
+        <div class="profile-info-value">
+            <span class="editable" id="age">{$professor}</span>
+        </div>
+    </div>
+
+    <div class="profile-info-row">
+        <div class="profile-info-name">导师联系方式</div>
+        <div class="profile-info-value">
+            <span class="editable" id="age">{$professor_phone}</span>
+        </div>
+    </div>
+
+    <div class="profile-info-row">
+        <div class="profile-info-name">紧急联系人</div>
+        <div class="profile-info-value">
+            <span class="editable" id="age">{$parent}</span>
+        </div>
+    </div>
+
+    <div class="profile-info-row">
+        <div class="profile-info-name">紧急联系人电话</div>
+        <div class="profile-info-value">
+            <span class="editable" id="age">{$parent_phone}</span>
+        </div>
+    </div>
+
+</div>

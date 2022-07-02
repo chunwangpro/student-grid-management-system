@@ -1,0 +1,112 @@
+<div class="page-header">
+    <h1>
+        <b>更新个人状态</b>
+
+        <div class="col-sm-6 pull-right">
+            <span class="btn btn-sm btn-primary pull-right"
+                onclick="javascript:window.location.href = '../personal.Studentinfo/index'">
+                查询个人详细信息
+                <i class="icon-reply icon-only"></i>
+            </span>
+        </div>
+    </h1>
+</div>
+
+<div class="profile-user-info profile-user-info-striped">
+
+
+<div class="profile-info-row">
+    <div class="profile-info-name">学号</div>
+    <div class="profile-info-value">
+        <span class="editable" id="username">{$no}</span>
+    </div>
+</div>
+
+<div class="profile-info-row">
+    <div class="profile-info-name">姓名</div>
+    <div class="profile-info-value">
+        <span class="editable" id="country">{$name}</span>
+    </div>
+</div>
+
+
+<div class="profile-info-row">
+    <div class="profile-info-name">当前状态</div>
+    <div class="profile-info-value">
+        <span class="editable" id="age">{$status}</span>
+    </div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+<div class="widget-box">
+<div class="widget-box widget-color-dark" id="widget-box-7">
+    <div class="widget-header widget-header-small" style="background:#418ac9">
+        <h5 class="widget-title">更新个人状态</h5>
+    </div>
+
+    <div class="widget-body">
+        <div class="widget-main">
+            <div class="alert alert-info">
+
+                <form action="updatestatus" method="post" class="form-horizontal" role="form">
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">更新当前状态</label>
+                        <div class="col-sm-9">
+                            <select name="newstatus" id="form-field-1" class="col-xs-10 col-sm-5">
+                                <option value="" style=color:gray disabled selected hidden>请选择当前状态
+                                </option>
+
+                            </select>
+                        </div>
+                    </div>
+
+                    <div style="text-align:center;vertical-align:middle;">
+                        <input type="submit" class="btn btn-sm btn-primary" value="更新提交" />
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+        
+    </div>
+    
+</div>
+</div>
+
+<script>
+var select = document.getElementById("form-field-1");
+//由于php繁琐的传值方式，数组需要将其转换为json格式，然后通过js解析json，将json格式转换为数组，才可以打印。
+
+// 先转为JSON格式
+var arr='<?php echo json_encode($res) ?>';
+// 再转回原数组
+var nav=JSON.parse(arr);
+//实现动态给下拉列表赋值，无论数据库如何改变，下拉列表总能显示变化后的数据，因此更新数据库后，无需手动修改前端代码。
+for(let i=0;i<nav.length;i++){
+    var optionObj=document.createElement("option");
+    optionObj.innerHTML = nav[i].status_name;
+    optionObj.value = nav[i].status_id;
+    select.appendChild(optionObj);
+}
+console.log(nav);
+//实现根据身份跳转到不同个人页面的功能
+function handleClick(){
+    //str是从后端传来的rold_id值，目前有4种，1或2为老师，3或4为学生
+    let str = "{$role}";
+    //如果role_id等于1或2，则为老师，否则为学生
+    if(str === '1' ||str === '2') {
+        window.location.href = '../personal.teacherinfo/index'
+    } else {
+        window.location.href = '../personal.studentinfo/index'
+    }
+}
+</script>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<style>
+    /* 设置form样式 */
+    #test {
+        margin: 10px;
+        margin-left: 220px;
+    }
+    #test02 {
+        margin-bottom: 10px;
+    }
+</style>
+<script language="javascript" type="text/javascript">
+    window.onload = function () {
+        var tableLine = document.getElementById("number");
+        for (var i = 0; i < tableLine.rows.length; i++) {
+            tableLine.rows[i].cells[0].innerHTML = (i + 1);
+        }
+     }
+
+    //超级管理员点击删除前弹出确认框
+    function confirmDel(no,name){
+        if(confirm("确定在数据库中删除"+no+"_"+name+"的信息吗？")){
+            return true;
+        }
+        else{
+            return false;}
+    }
+</script>
+</head>
+<body>
+<div class="col-sm-6 pull-right" id='test02'>
+        <span class="btn btn-sm btn-primary pull-right"
+              onclick="javascript:window.location.href = '../supervise.checkstudent/index'">
+            返回学生名单页面
+            <i class="icon-reply icon-only"></i>
+        </span>
+</div>
+<div>
+    <div id="dynamic-table_wrapper" class="dataTables_wrapper form-inline no-footer">
+
+        <table id="dynamic-table" class="table table-striped table-bordered table-hover dataTable no-footer"
+               role="grid" aria-describedby="dynamic-table_info">
+            <thead>
+            <tr role="row">
+                
+                <th class="sorting" tabindex="0" aria-controls="dynamic-table" rowspan="1" colspan="1"
+                    aria-label="activate to sort column ascending">编号
+                </th>
+
+                <th class="sorting" tabindex="0" aria-controls="dynamic-table" rowspan="1" colspan="1"
+                    aria-label="activate to sort column ascending">学号
+                </th>
+
+                <th class="sorting" tabindex="0" aria-controls="dynamic-table" rowspan="1"
+                    colspan="1" aria-label="activate to sort column ascending">学生姓名
+                </th>
+
+                <th class="sorting" tabindex="0" aria-controls="dynamic-table" rowspan="1"
+                    colspan="1" aria-label="activate to sort column ascending">身份
+                </th>
+                
+                <th class="sorting" tabindex="0" aria-controls="dynamic-table" rowspan="1"
+                    colspan="1" aria-label="activate to sort column ascending">联络人
+                </th>
+                
+                <th class="sorting" tabindex="0" aria-controls="dynamic-table" rowspan="1"
+                    colspan="1" aria-label="activate to sort column ascending">导师
+                </th>
+
+                <th class="sorting" tabindex="0" aria-controls="dynamic-table" rowspan="1"
+                    colspan="1" aria-label="activate to sort column ascending">院系专业
+                </th>
+                
+                <th class="sorting" tabindex="0" aria-controls="dynamic-table" rowspan="1"
+                    colspan="1" aria-label="activate to sort column ascending">学苑
+                </th>
+                
+                <th class="sorting" tabindex="0" aria-controls="dynamic-table" rowspan="1"
+                    colspan="1" aria-label="activate to sort column ascending">当前状态
+                </th>
+
+            </tr>
+            </thead>
+
+            <tbody id='number'>
+
+            {volist name="student" id="vo"}
+
+            <tr role="row" class="odd selected">
+
+                <td></td>
+                <td>{$vo.no}</td>
+                <td>{$vo.name}</td>
+                <td>{$vo.role_name}</td>
+                <td>{$vo.contact_name}</td>
+                <td>{$vo.professor}</td>
+                <td>{$vo.r_major}</td>
+                <td>{$vo.r_department}</td>
+                <td>{$vo.r_status}</td>
+
+            </tr>
+
+            {/volist}
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

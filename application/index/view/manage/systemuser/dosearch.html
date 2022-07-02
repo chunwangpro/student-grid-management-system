@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<style>
+    /* 设置form样式 */
+    #test {
+        margin: 10px;
+        margin-left: 230px;
+    }
+    #test02 {
+        margin-left: -303px;
+        margin-top: -34px;
+    }
+    #test03 {
+        margin-left: -194px;
+    }
+    #test04 {
+        margin-left: -430px;
+        margin-top: 7px;
+    }
+    #test16 {
+        margin-left: -200px;
+        margin-top: 0px;
+    }
+</style>
+<script type="text/javascript">    
+function hide(divid){  
+    let odiv = document.getElementsByName(divid);  
+    for (let i = 0; i < odiv.length; i++) {
+        odiv[i].style.display = "none";
+    }
+}  
+function show(divid){  
+    let odiv = document.getElementsByName(divid);  
+    for (let i = 0; i < odiv.length; i++) {
+        odiv[i].style.display = "block";
+    }
+}  
+window.onload = function () {
+    var tableLine = document.getElementById("number");
+    for (var i = 0; i < tableLine.rows.length; i++) {
+        tableLine.rows[i].cells[0].innerHTML = (i + 1);
+    }
+}
+</script>   
+</head>
+<body>
+    
+    <div class="col-sm-6 pull-right">
+        <span class="btn btn-sm btn-primary pull-right" onclick="javascript:window.location.href = '../manage.systemuser/index'">
+            返回管理系统用户页面
+            <i class="icon-reply icon-only"></i>
+        </span>
+    </div>
+
+<div>
+    <div id="dynamic-table_wrapper" class="dataTables_wrapper form-inline no-footer">
+        <div class="row">
+
+            <form action="search" method="post" class="form-horizontal" role="form">
+            
+                 <div class='col-sm-9' align="center" id='test'>
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1">检索模式选择:
+                    </label>
+
+                    <div class="col-sm-9">
+                        <label id='test04'>模糊查询
+                        </label>
+                        
+                        <input onclick="hide('test8');show('test6');show('test10');hide('test12')" type="radio" name="mode" value='mode1' checked>
+
+                        <label>高级搜索
+                        </label>
+                        
+                        <input onclick="hide('test6');show('test8');hide('test12');show('test10')" type="radio" name="mode" value='mode2'>
+                        
+                        <label>快捷搜索
+                        </label>
+                        
+                        <input onclick="hide('test6');hide('test8');hide('test10');show('test12')" type="radio" name="mode" value='mode3'>
+                        
+                    </div>
+                </div>
+                
+                <div name='test10' class='col-sm-9' align="center" id='test'>
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1">姓名拼音:
+                    </label>
+
+                    <div class="col-sm-9">
+                        <input type="text" name="pinyin" id="form-field-1" placeholder="   请输入姓名拼音进行模糊查询"
+                               class="col-xs-10 col-sm-5">
+                    </div>
+                </div>
+
+                <div name='test10' class='col-sm-9' align="center" id='test'>
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1">姓名:
+                    </label>
+
+                    <div class="col-sm-9">
+                        <input type="text" name="name" id="form-field-1" placeholder="   请输入姓名进行模糊查询"
+                               class="col-xs-10 col-sm-5">
+                    </div>
+                </div>
+
+                <div name='test10' class='col-sm-9' align="center" id='test'>
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1">学号:
+                    </label>
+
+                    <div class="col-sm-9">
+                        <input type="text" name="num" id="form-field-1" placeholder="   请输入学号前*位进行模糊查询"
+                               class="col-xs-10 col-sm-5">
+                    </div>
+                </div>
+
+                <div name='test10' class='col-sm-9' align="center" id='test'>
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1">导师姓名:
+                    </label>
+
+                    <div class="col-sm-9">
+                        <input type="text" name="tutor" id="form-field-1" placeholder="   请输入导师姓名进行模糊查询"
+                               class="col-xs-10 col-sm-5">
+                    </div>
+                </div>
+
+                <div name='test6' class='col-sm-9' align="center" id='test' style='display:block'>
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1">所属院系:
+                    </label>
+
+                    <div class="col-sm-9">
+                        <input type="text" name="major" id="form-field-1" placeholder="   请输入所属院系进行模糊查询"
+                               class="col-xs-10 col-sm-5">
+                    </div>
+                </div>
+                
+                <div name='test6' class='col-sm-9' align="center" id='test' style='display:block'>
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1">所属学苑:
+                    </label>
+
+                    <div class="col-sm-9">
+                        <input type="text" name="department" id="form-field-1" placeholder="   请输入所属学苑进行模糊查询"
+                               class="col-xs-10 col-sm-5">
+                    </div>
+                </div>
+                
+                <div name='test6' class='col-sm-9' align="center" id='test' style='display:block'>
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1">当前状态:
+                    </label>
+
+                    <div class="col-sm-9">
+                        <input type="text" name="status" id="form-field-1" placeholder="   请输入当前状态进行模糊查询"
+                               class="col-xs-10 col-sm-5">
+                    </div>
+                </div>
+
+                <div name='test8' class='col-sm-9' align="center" id='test' style='display:none'>
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1">所属院系(ctrl+单击可多选):
+                    </label>
+
+                    <div class="col-sm-9">
+                        <select name="major2[]" id="form-field-1" class="col-xs-10 col-sm-5" multiple="multiple">
+                            <!--<option value=""> ———————请选择——————— </option>-->
+                            {volist name="major" id="vo"}
+                            <option value="{$vo.id}">{$vo.name}</option>
+                            {/volist}
+                            <!--<option value="网络软件与系统安全系">网络软件与系统安全系</option>-->
+                            <!--<option value="集成电路与智能系统系">集成电路与智能系统系</option>-->
+                            <!--<option value="金融信息与工程管理系">金融信息与工程管理系</option>-->
+                            <!--<option value="数字艺术与技术传播系">数字艺术与技术传播系</option>-->
+                            <!--<option value="工程博士教育中心">工程博士教育中心</option>-->
+                            <!--<option value="工程管理硕士教育中心">工程管理硕士教育中心</option>-->
+                            <!--<option value="国际与港澳台教育中心">国际与港澳台教育中心</option>-->
+                            <!--<option value="示范性微电子学院建设项目">示范性微电子学院建设项目</option>-->
+                        </select>
+                    </div>
+                </div>
+
+                <div name='test8' class='col-sm-9' align="center" id='test' style='display:none'>
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1">所属学苑(ctrl+单击可多选):
+                    </label>
+
+                    <div class="col-sm-9">
+                        <select name="department2[]" id="form-field-1" class="col-xs-10 col-sm-5" multiple="multiple">
+                            <!--<option value=""> ———————请选择——————— </option>-->
+                            {volist name="department" id="vo"}
+                            <option value="{$vo.id}">{$vo.name}</option>
+                            {/volist}
+                            <!--<option value="求知一苑">求知一苑</option>-->
+                            <!--<option value="求知二苑">求知二苑</option>-->
+                            <!--<option value="求知三苑">求知三苑</option>-->
+                            <!--<option value="博士博实苑">博士博实苑</option>-->
+                            <!--<option value="英杰一苑">英杰一苑</option>-->
+                            <!--<option value="英杰二苑">英杰二苑</option>-->
+                            <!--<option value="英杰三苑">英杰三苑</option>-->
+                            <!--<option value="博雅一苑">博雅一苑</option>-->
+                            <!--<option value="博雅二苑">博雅二苑</option>-->
+                            <!--<option value="博雅三苑">博雅三苑</option>-->
+                            <!--<option value="博雅四苑">博雅四苑</option>-->
+                            <!--<option value="未名一苑">未名一苑</option>-->
+                            <!--<option value="未名二苑">未名二苑</option>-->
+                            <!--<option value="未名三苑">未名三苑</option>-->
+                            <!--<option value="未名四苑">未名四苑</option>-->
+                            <!--<option value="英杰一苑">英杰一苑</option>-->
+                            <!--<option value="英杰二苑">英杰二苑</option>-->
+                            <!--<option value="英杰三苑">英杰三苑</option>-->
+                            <!--<option value="英杰四苑">英杰四苑</option>-->
+                            <!--<option value="燕南一苑">燕南一苑</option>-->
+                            <!--<option value="燕南二苑">燕南二苑</option>-->
+                            <!--<option value="燕南三苑">燕南三苑</option>-->
+                            <!--<option value="燕南四苑">燕南四苑</option>-->
+                            <!--<option value="MEM一苑">MEM一苑</option>-->
+                            <!--<option value="MEM二苑">MEM二苑</option>-->
+                            <!--<option value="MEM三苑">MEM三苑</option>-->
+                            <!--<option value="MEM四苑">MEM四苑</option>-->
+                            <!--<option value="MEM五苑">MEM五苑</option>-->
+                        </select>
+                    </div>
+                </div>
+
+                <div name='test8' class='col-sm-9' align="center" id='test' style='display:none'>
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1">当前状态(ctrl+单击可多选):
+                    </label>
+
+                    <div class="col-sm-9">
+                        <select name='status2[]' id="form-field-1" class="col-xs-10 col-sm-5" multiple="multiple">
+                            <!--<option value=""> ———————请选择——————— </option>-->
+                            {volist name="status" id="vo"}
+                            <option value="{$vo.status_id}">{$vo.status_name}</option>
+                            {/volist}
+                            <!--<option value="在校">在校</option>-->
+                            <!--<option value="校外实习">校外实习</option>-->
+                            <!--<option value="写论文">写论文</option>-->
+                            <!--<option value="居家">居家</option>-->
+                        </select>
+                    </div>
+                </div>
+    
+                <div name='test8' class='col-sm-9' align="center" id='test' style='display:none'>
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1">身份(ctrl+单击可多选):
+                    </label>
+
+                    <div class="col-sm-9">
+                        <select name="role[]" id="form-field-1" class="col-xs-10 col-sm-5" multiple="multiple">
+                            <!--<option value=""> ———————请选择——————— </option>-->
+                            {volist name="role" id="vo"}
+                            <option value="{$vo.id}">{$vo.name}</option>
+                            {/volist}
+                            <!--<option value="1">管理员</option>-->
+                            <!--<option value="2">教师管理员</option>-->
+                            <!--<option value="3">学生管理员</option>-->
+                            <!--<option value="4">学生</option>-->
+                        </select>
+                    </div>
+                </div>
+                
+                <div class='col-sm-9' align="center" id='test' style='display:none' name='test8'>
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1">选择核酸日期区间:
+                    </label>
+
+                    <div class="col-sm-9" id='test03'>
+                        <input type="date" name="cov_time_2" id="form-field-1" >
+                        <input type="date" name="cov_time_1" id="form-field-1" >
+                    </div>
+                </div>
+                
+                <div name='test12' class='col-sm-9' align="center" id='test' style='display:none'>
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1">学苑管理员查询:
+                    </label>
+
+                    <div class="col-sm-9">
+                        <select name="manager" id="form-field-1" class="col-xs-10 col-sm-5">
+                            <option value=""> ———————请选择——————— </option>
+                            {volist name="department" id="vo"}
+                            <option value="{$vo.id}">{$vo.name}</option>
+                            {/volist}
+                            <!--<option value="求知一苑">求知一苑</option>-->
+                            <!--<option value="求知二苑">求知二苑</option>-->
+                            <!--<option value="求知三苑">求知三苑</option>-->
+                            <!--<option value="博士博实苑">博士博实苑</option>-->
+                            <!--<option value="英杰一苑">英杰一苑</option>-->
+                            <!--<option value="英杰二苑">英杰二苑</option>-->
+                            <!--<option value="英杰三苑">英杰三苑</option>-->
+                            <!--<option value="博雅一苑">博雅一苑</option>-->
+                            <!--<option value="博雅二苑">博雅二苑</option>-->
+                            <!--<option value="博雅三苑">博雅三苑</option>-->
+                            <!--<option value="博雅四苑">博雅四苑</option>-->
+                            <!--<option value="未名一苑">未名一苑</option>-->
+                            <!--<option value="未名二苑">未名二苑</option>-->
+                            <!--<option value="未名三苑">未名三苑</option>-->
+                            <!--<option value="未名四苑">未名四苑</option>-->
+                            <!--<option value="英杰一苑">英杰一苑</option>-->
+                            <!--<option value="英杰二苑">英杰二苑</option>-->
+                            <!--<option value="英杰三苑">英杰三苑</option>-->
+                            <!--<option value="英杰四苑">英杰四苑</option>-->
+                            <!--<option value="燕南一苑">燕南一苑</option>-->
+                            <!--<option value="燕南二苑">燕南二苑</option>-->
+                            <!--<option value="燕南三苑">燕南三苑</option>-->
+                            <!--<option value="燕南四苑">燕南四苑</option>-->
+                            <!--<option value="MEM一苑">MEM一苑</option>-->
+                            <!--<option value="MEM二苑">MEM二苑</option>-->
+                            <!--<option value="MEM三苑">MEM三苑</option>-->
+                            <!--<option value="MEM四苑">MEM四苑</option>-->
+                            <!--<option value="MEM五苑">MEM五苑</option>-->
+                        </select>
+                    </div>
+                </div>
+                
+                <div name='test12' class='col-sm-9' align="center" id='test' style='display:none'>
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1">一键查询:
+                    </label>
+
+                    <div class="col-sm-9">
+                        <select name="quicksearch" id="form-field-1" class="col-xs-10 col-sm-5">
+                            <option value=""> ———————请选择——————— </option>
+                            <option value="1">个人信息未更新名单</option>
+                            <option value="2">当日未做核酸名单</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="col-sm-9" id="test16">
+                    <div class="col-sm-6 pull-right">
+                        <button class="btn btn-sm btn-primary pull-right" type="reset">一键清空</button>
+                    </div>
+                </div>
+                
+                <div class="col-sm-9" id="test02">
+                    <div class="col-sm-6 pull-right">
+                        <input class="btn btn-sm btn-primary pull-right" type="submit" value="检索"/>
+                    </div>
+                </div>
+                
+            </form>
+
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

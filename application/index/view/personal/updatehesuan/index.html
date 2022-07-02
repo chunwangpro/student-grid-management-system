@@ -1,0 +1,253 @@
+<script language="javascript" type="text/javascript">
+    //提交弹出二次确认框
+    function updatevaccinescheck() {
+        if (confirm("提交即承诺：本人对填报信息负责，若出现谎报情况，愿意承担一切责任与后果！")) {
+            document.update.action = "index.html"; //将表单提交给某个页面
+            document.update.submit();
+        } else {
+            return false;
+        }
+    }
+
+    function updatehesuancheck() {
+        if (confirm("提交即承诺：本人对填报信息负责，若出现谎报情况，愿意承担一切责任与后果！")) {
+            document.update.action = "index.html"; //将表单提交给某个页面
+            document.update.submit();
+        } else {
+            return false;
+        }
+    }
+</script>
+
+<div class="page-header">
+    <h1>
+        <b>接种疫苗</b>
+        <small>
+            <i class="ace-icon fa fa-angle-double-right"></i>
+            <div class="profile-info-value">
+                <span id="age">
+                    <h1><b>{$vaccines}针</b></h1>
+                </span>
+            </div>
+        </small>
+        <br>
+        <b>最近核酸</b>
+        <small>
+            <i class="ace-icon fa fa-angle-double-right"></i>
+            <div class="profile-info-value">
+                <span id="age">
+                    <h1><b>{$last_hesuan}</b></h1>
+                </span>
+            </div>
+        </small>
+    </h1>
+</div>
+
+
+
+
+
+<div class="widget-box">
+    <div class="widget-box widget-color-dark" id="widget-box-7">
+        <div class="widget-header widget-header-small" style="background:#418ac9">
+            <i class="ace-icon fa fa-spinner"></i>
+            <h5 class="widget-title">更新核酸检测信息</h5>
+        </div>
+
+        <div class="widget-body">
+            <div class="widget-main">
+                <div class="alert alert-info">
+
+                    <form action="updatehesuan" method="post" class="form-horizontal" role="form">
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">检测时间</label>
+                            <div class="col-sm-9">
+                                <input type="date" name="time" id="form-field-1" placeholder="   请填写疫苗接种时间"
+                                    class="col-xs-10 col-sm-5">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">检测地点</label>
+                            <div class="col-sm-9">
+                                <select name="where" id="form-field-1" class="col-xs-10 col-sm-5">
+                                    <option value="" style=color:gray disabled selected hidden>请选择核酸检测地点
+                                    </option>
+                                    <option value="北大（大兴）">北大（大兴）</option>
+                                    <option value="北大（其他校区）">北大（其他校区）</option>
+                                    <option value="校外">校外</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div onclick="return updatehesuancheck()" style="text-align:center;vertical-align:middle;">
+                            <input type="submit" class="btn btn-sm btn-primary"
+                                value="更新提交" />
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="col-xs-12 col-sm-6 widget-container-col ui-sortable" id="widget-container-col-2"> -->
+    <div class="widget-box widget-color-blue ui-sortable-handle" id="widget-box-2">
+        <div class="widget-header">
+            <h5 class="widget-title bigger lighter">
+                <i class="ace-icon fa fa-table"></i>
+                疫苗接种情况表
+            </h5>
+        </div>
+
+        <div class="widget-body">
+            <div class="widget-main no-padding">
+                <table class="table table-striped table-bordered table-hover">
+                    <thead class="thin-border-bottom">
+                        <tr>
+                            <th>
+                                疫苗针剂
+                            </th>
+                            <th>
+                                接种时间
+                            </th>
+                            <th class="hidden-480">接种地点</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td class="">第一针</td>
+                            <td>
+                                {$d1}
+                            </td>
+                            <td class="hidden-480">
+                                {$l1}
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="">第二针</td>
+                            <td>
+                                {$d2}
+                            </td>
+                            <td class="hidden-480">
+                                {$l2}
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="">加强针</td>
+                            <td>
+                                {$d3}
+                            </td>
+                            <td class="hidden-480">
+                                {$l3}
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+<!-- </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="widget-box">
+    <div class="widget-box widget-color-dark" id="widget-box-7">
+        <div class="widget-header widget-header-small" style="background:#418ac9">
+            <i class="ace-icon fa fa-spinner"></i>
+            <h5 class="widget-title">更新疫苗接种情况</h5>
+        </div>
+
+        <div class="widget-body">
+            <div class="widget-main">
+                <div class="alert alert-info">
+
+                    <form action="updatevaccines" method="post" class="form-horizontal" role="form">
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">接种剂次</label>
+                            <div class="col-sm-9">
+                                <select name="vstatus" id="form-field-1" class="col-xs-10 col-sm-5">
+                                    <option value="" style=color:gray disabled selected hidden>请选择疫苗接种剂次情况
+                                    </option>
+                                    <option value="0">未接种</option>
+                                    <option value="1">已接种第一针</option>
+                                    <option value="2">已接种第二针</option>
+                                    <option value="3">已接种加强针</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">接种时间</label>
+                            <div class="col-sm-9">
+                                <input type="date" name="vdate" id="form-field-1" placeholder="   请填写疫苗接种时间"
+                                    class="col-xs-10 col-sm-5">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">接种地点</label>
+                            <div class="col-sm-9">
+                                <select name="vloc" id="form-field-1" class="col-xs-10 col-sm-5">
+                                    <option value="" style=color:gray disabled selected hidden>请选择疫苗接种地点
+                                    </option>
+                                    <option value="北京">北京</option>
+                                    <option value="京外">京外</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div onclick="return updatevaccinescheck()" style="text-align:center;vertical-align:middle;">
+                            <input type="submit" class="btn btn-sm btn-primary"
+                                value="更新提交" />
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>checkcontact_info</title>
+</head>
+<body>
+
+<div class="page-header">
+    <h1>
+        <b>目前状态</b>
+        <small>
+            <i class="ace-icon fa fa-angle-double-right"></i>
+            <div class="profile-info-value">
+                <span id="status">
+                    <h1><b>{$status}</b></h1>
+                </span>
+            </div>
+        </small>
+        <div class="col-sm-6 pull-right">
+    <span class="btn btn-sm btn-primary pull-right" onclick="javascript:window.location.href = '../supervise.checkcontact/index'">
+        返回查询页面
+        <i class="icon-reply icon-only"></i>
+    </span>
+        </div>
+    </h1>
+
+
+</div>
+
+
+<div class="profile-user-info profile-user-info-striped">
+    <div class="profile-info-row">
+        <div class="profile-info-name">学号/工号</div>
+
+        <div class="profile-info-value">
+            <span class="editable editable-click" id="no">{$no}</span>
+        </div>
+    </div>
+
+    <div class="profile-info-row">
+        <div class="profile-info-name"> 姓名</div>
+
+        <div class="profile-info-value">
+            <span class="editable editable-click" id="name">{$name}</span>
+        </div>
+    </div>
+
+    <div class="profile-info-row">
+        <div class="profile-info-name">性别</div>
+
+        <div class="profile-info-value">
+            <span class="editable editable-click" id="sex">{$sex}</span>
+        </div>
+    </div>
+
+    <div class="profile-info-row">
+        <div class="profile-info-name"> 学苑</div>
+
+        <div class="profile-info-value">
+            <span class="editable editable-click" id="class">{$class}</span>
+        </div>
+    </div>
+
+    <div class="profile-info-row">
+        <div class="profile-info-name"> 院系专业</div>
+
+        <div class="profile-info-value">
+            <span class="editable editable-click" id="major">{$major}</span>
+        </div>
+    </div>
+
+    <div class="profile-info-row">
+        <div class="profile-info-name">本苑教师管理员</div>
+
+        <div class="profile-info-value">
+            {volist name="teacher" id="vo"}
+            <span class="editable editable-click" id="tea_name">{$vo.tea_name}</span>
+            <span class="editable editable-click" id="tea_phone">{$vo.tea_phone}</span>
+            <br/>
+            {/volist}
+        </div>
+    </div>
+
+    <div class="profile-info-row">
+        <div class="profile-info-name">导师</div>
+
+        <div class="profile-info-value">
+            <span class="editable editable-click" id="professor">{$professor}</span>
+        </div>
+    </div>
+
+    <div class="profile-info-row">
+        <div class="profile-info-name">导师联系电话</div>
+
+        <div class="profile-info-value">
+            <span class="editable editable-click" id="professor_phone">{$professor_phone}</span>
+        </div>
+    </div>
+
+    <div class="profile-info-row">
+        <div class="profile-info-name">出生日期</div>
+
+        <div class="profile-info-value">
+            <span class="editable editable-click" id="birth">{$birth}</span>
+        </div>
+    </div>
+
+    <div class="profile-info-row">
+        <div class="profile-info-name"> 联系电话</div>
+
+        <div class="profile-info-value">
+            <span class="editable editable-click" id="phone">{$phone}</span>
+        </div>
+    </div>
+
+    <div class="profile-info-row">
+        <div class="profile-info-name"> 邮箱</div>
+
+        <div class="profile-info-value">
+            <span class="editable editable-click" id="email">{$email}</span>
+        </div>
+    </div>
+
+    <div class="profile-info-row">
+        <div class="profile-info-name"> 当前地址</div>
+
+        <div class="profile-info-value">
+            <span class="editable editable-click" id="address">{$address}</span>
+        </div>
+    </div>
+
+    <div class="profile-info-row">
+        <div class="profile-info-name"> 紧急联系人</div>
+
+        <div class="profile-info-value">
+            <span class="editable editable-click" id="parent">{$parent}</span>
+        </div>
+    </div>
+
+    <div class="profile-info-row">
+        <div class="profile-info-name"> 紧急联系人电话</div>
+
+        <div class="profile-info-value">
+            <span class="editable editable-click" id="parent_phone">{$parent_phone}</span>
+        </div>
+    </div>
+
+    <div class="profile-info-row">
+        <div class="profile-info-name">疫苗接种剂次</div>
+
+        <div class="profile-info-value">
+            <span class="editable editable-click" id="vaccines">{$vaccines}</span>
+        </div>
+    </div>
+
+    <div class="profile-info-row">
+        <div class="profile-info-name">最近核酸日期</div>
+
+        <div class="profile-info-value">
+            <span class="editable editable-click" id="last_hesuan">{$last_hesuan}</span>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

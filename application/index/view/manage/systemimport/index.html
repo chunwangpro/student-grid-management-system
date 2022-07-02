@@ -1,0 +1,25 @@
+<div class="widget-box">
+    <div class="widget-box widget-color-dark" id="widget-box-7">
+        <div class="widget-header widget-header-small">
+            <h5 class="widget-title">批量导入</h5>
+        </div>
+
+        <div class="widget-body">
+            <div class="widget-main">
+
+                <div class="alert alert-info">
+                    <form action="import" method="post" enctype="multipart/form-data">
+                        <label for="file">请选择EXCEL文件上传：</label>
+                        <input type="file" name="file" id="file"><br>
+                        <input type="submit" name="submit" value="提交">
+                    </form>
+                </div>
+                <div>
+                    <form action="download" method="post" enctype="multipart/form-data">
+                        <input type="submit" name="submit" value="下载模板">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

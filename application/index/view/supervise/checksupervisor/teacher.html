@@ -1,0 +1,56 @@
+<script language="javascript" type="text/javascript">
+    window.onload = function () {
+        var tableLine = document.getElementById("number");
+        for (var i = 0; i < tableLine.rows.length; i++) {
+            tableLine.rows[i].cells[0].innerHTML = (i + 1);
+        }
+    }
+</script>
+
+<div class="page-header">
+    <h1>
+        <b>学苑管理员信息</b>
+        <div class="col-sm-6 pull-right">
+            <span class="btn btn-sm btn-primary pull-right"
+                onclick="javascript:window.location.href = '../supervise.checksupervisor/index'">
+                返回学苑管理员名单页面
+                <i class="icon-reply icon-only"></i>
+            </span>
+        </div>
+    </h1>
+</div>
+
+
+<div class="profile-user-info profile-user-info-striped">
+    <div class="profile-info-row">
+        <div class="profile-info-name"> 工号</div>
+
+        <div class="profile-info-value">
+            <span class="editable" id="username">{$no}</span>
+        </div>
+    </div>
+
+    <div class="profile-info-row">
+        <div class="profile-info-name"> 姓名</div>
+
+        <div class="profile-info-value">
+            <span class="editable" id="name">{$name}</span>
+        </div>
+    </div>
+
+    <div class="profile-info-row">
+        <div class="profile-info-name"> 联系电话</div>
+
+        <div class="profile-info-value">
+            <span class="editable" id="phone">{$phone}</span>
+        </div>
+    </div>
+    <div class="profile-info-row">
+        <div class="profile-info-name"> 邮箱</div>
+
+        <div class="profile-info-value">
+            <span class="editable" id="email">{$email}</span>
+        </div>
+    </div>
+
+
